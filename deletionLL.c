@@ -94,3 +94,6 @@ int main()
     linkedListTraversal(head);
     return 0;
 }
+
+
+//rudra gay
