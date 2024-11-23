@@ -24,6 +24,42 @@ struct node* insertAtStart (struct node* head,int data){
 
 
 }
+    struct node* inserAtEnd(struct node* head, int data){
+        struct node* ptr=(struct node*)malloc(sizeof(struct node));
+        struct node* p= head;
+
+        ptr->data=data;
+
+        while (p->next!= NULL)
+
+        {
+            p=p->next;
+
+        }
+        p->next=ptr;
+        ptr->next=NULL;
+        
+        return head;
+    }
+
+
+    struct node* insertAtIndex(struct node* head, int data, int index){
+        struct node* ptr=(struct node*)malloc(sizeof(struct node));
+        struct node*p=head;
+        int i=0;
+
+        while (i != index-1)
+        {
+            p=p->next;
+            i++;
+
+        }
+        ptr->data=data;
+        ptr->next=p->next;
+        p->next=ptr;
+         
+         return head;
+    }
 
 int main(){
 
@@ -41,6 +77,7 @@ third->next=NULL;
 linkedListTraversal(head);
 head= insertAtStart(head,69);
 linkedListTraversal(head);
+
 
 
     return 0;
